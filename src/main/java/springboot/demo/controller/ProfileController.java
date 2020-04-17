@@ -1,13 +1,12 @@
 package springboot.demo.controller;
 
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import springboot.demo.dto.QuestionDTO;
-import springboot.demo.mapper.QuestionMapper;
 import springboot.demo.mapper.UserMapper;
 import springboot.demo.model.Question;
 import springboot.demo.model.User;
@@ -15,42 +14,48 @@ import springboot.demo.service.QuestionService;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-public class HelloController {
-//    @RequestMapping("/hello")
-//    public String hello(@RequestParam(name = "name") String name, Model model){
-//        model.addAttribute("name",name);
-//        return "index";
-//    }
+@RequestMapping("/profile")
+public class ProfileController {
     @Autowired
     private UserMapper userMapper;
 
     @Autowired
     private QuestionService questionService;
-    @RequestMapping("/")
-    public String hello(HttpServletRequest request, Model model,
-                        @RequestParam(name = "page",defaultValue = "1") Integer page,
-                        @RequestParam(name = "size",defaultValue = "5")Integer size){
+    @GetMapping("/question")
+    public String myquestion(Model model, HttpServletRequest request,
+                             @RequestParam("page")Integer page,
+                             @RequestParam("size")Integer size){
         Cookie[] cookies = request.getCookies();
+        User user=null;
         if (cookies!=null && cookies.length!=0)
             for (Cookie cookie:cookies){
                 if (cookie.getName().equals("token")){
                     String token = cookie.getValue();
-                    User user = userMapper.selectBytoken(token);
+                    user = userMapper.selectBytoken(token);
                     if (user!=null){
                         request.getSession().setAttribute("user",user);
                     }
                     break;
                 }
             }
-
-      List<QuestionDTO> questionList=questionService.list(page,size,model);
-          model.addAttribute("questions",questionList);
-//        System.out.println(model);
-        return "index";
+        if (user==null){
+            model.addAttribute("error","用户未登录");
+            return "redirect:/";
+        }
+        List<QuestionDTO> list=questionService.listByUserId(page,size,user.getId(),model);
+        model.addAttribute("questions",list);
+        model.addAttribute("section","question");
+        model.addAttribute("sectionName","我的问题");
+        return "profile";
     }
 
+    @GetMapping("/reply")
+    public String myreply(Model model){
+        model.addAttribute("section","reply");
+        model.addAttribute("sectionName","新的回复");
+        return "profile";
+    }
 }
