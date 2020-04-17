@@ -25,8 +25,7 @@ public class HelloController {
 //        model.addAttribute("name",name);
 //        return "index";
 //    }
-    @Autowired
-    private UserMapper userMapper;
+
 
     @Autowired
     private QuestionService questionService;
@@ -34,18 +33,7 @@ public class HelloController {
     public String hello(HttpServletRequest request, Model model,
                         @RequestParam(name = "page",defaultValue = "1") Integer page,
                         @RequestParam(name = "size",defaultValue = "5")Integer size){
-        Cookie[] cookies = request.getCookies();
-        if (cookies!=null && cookies.length!=0)
-            for (Cookie cookie:cookies){
-                if (cookie.getName().equals("token")){
-                    String token = cookie.getValue();
-                    User user = userMapper.selectBytoken(token);
-                    if (user!=null){
-                        request.getSession().setAttribute("user",user);
-                    }
-                    break;
-                }
-            }
+        User user = (User)request.getSession().getAttribute("user");
 
       List<QuestionDTO> questionList=questionService.list(page,size,model);
           model.addAttribute("questions",questionList);

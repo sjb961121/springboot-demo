@@ -19,28 +19,15 @@ import java.util.List;
 @Controller
 @RequestMapping("/profile")
 public class ProfileController {
-    @Autowired
-    private UserMapper userMapper;
+
 
     @Autowired
     private QuestionService questionService;
     @GetMapping("/question")
     public String myquestion(Model model, HttpServletRequest request,
-                             @RequestParam("page")Integer page,
-                             @RequestParam("size")Integer size){
-        Cookie[] cookies = request.getCookies();
-        User user=null;
-        if (cookies!=null && cookies.length!=0)
-            for (Cookie cookie:cookies){
-                if (cookie.getName().equals("token")){
-                    String token = cookie.getValue();
-                    user = userMapper.selectBytoken(token);
-                    if (user!=null){
-                        request.getSession().setAttribute("user",user);
-                    }
-                    break;
-                }
-            }
+                             @RequestParam(value = "page",defaultValue = "1")Integer page,
+                             @RequestParam(value = "size",defaultValue = "5")Integer size){
+         User user = (User)request.getSession().getAttribute("user");
         if (user==null){
             model.addAttribute("error","用户未登录");
             return "redirect:/";
