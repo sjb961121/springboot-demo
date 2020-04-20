@@ -1,17 +1,24 @@
 package springboot.demo.model;
 
-import org.apache.ibatis.annotations.Insert;
-
 public class Question {
     private Integer id;
+
     private String title;
+
     private String description;
+
     private String tag;
+
     private Long gmtCreate;
+
     private Long gmtModified;
+
     private Integer creator;
+
     private Integer commentCount;
+
     private Integer viewCount;
+
     private Integer likeCount;
 
     public Integer getId() {

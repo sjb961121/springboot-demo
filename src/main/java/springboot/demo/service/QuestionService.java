@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import springboot.demo.dto.QuestionDTO;
+import springboot.demo.exception.QuestionException;
 import springboot.demo.mapper.QuestionMapper;
 import springboot.demo.mapper.UserMapper;
 import springboot.demo.model.Question;
@@ -24,7 +25,7 @@ public class QuestionService {
 
     public PageInfo list(Integer page, Integer size){
         PageHelper.startPage(page,size);
-        List<Question> questions=questionMapper.list();
+        List<Question> questions=questionMapper.selectAll();
         PageInfo pageInfo = new PageInfo(questions);
 //        model.addAttribute("pageInfo",pageInfo);
 //        System.out.println(model);
@@ -35,7 +36,7 @@ public class QuestionService {
 
     public PageInfo listByUserId(Integer page,Integer size,Integer id){
         PageHelper.startPage(page,size);
-        List<Question> questions=questionMapper.listByUserId(id);
+        List<Question> questions=questionMapper.selectAllByCreator(id);
         PageInfo pageInfo = new PageInfo(questions);
         return pageInfo;
     }
@@ -53,7 +54,10 @@ public class QuestionService {
     }
 
     public QuestionDTO getQuestionById(Integer id) {
-        Question question=questionMapper.getQuestionByid(id);
+        Question question=questionMapper.selectById(id);
+        if (question==null){
+            throw new QuestionException();
+        }
         User user=userMapper.selectById(question.getCreator());
         QuestionDTO questionDTO=new QuestionDTO();
         BeanUtils.copyProperties(question,questionDTO);
@@ -67,7 +71,7 @@ public class QuestionService {
         }
         else {
             question.setGmtModified(question.getGmtCreate());
-            questionMapper.update(question);
+            questionMapper.updateById(question,question.getId());
         }
     }
 }
