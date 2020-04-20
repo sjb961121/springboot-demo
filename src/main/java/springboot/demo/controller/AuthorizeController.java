@@ -10,6 +10,7 @@ import springboot.demo.dto.GithubUser;
 import springboot.demo.mapper.UserMapper;
 import springboot.demo.model.User;
 import springboot.demo.provider.GithubProvider;
+import springboot.demo.service.UserService;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -28,10 +29,10 @@ public class AuthorizeController {
     @Value("${github.redirect.uri}")
     private String redirecturi;
 
+//    @Autowired
+//    private UserMapper userMapper;
     @Autowired
-    private UserMapper userMapper;
-
-
+    private UserService userService;
 
     @GetMapping("/callback")
     public String callback(@RequestParam(name = "code")String code, @RequestParam(name = "state") String state,
@@ -53,10 +54,9 @@ public class AuthorizeController {
             u.setToken(token);
             u.setName(user.getName());
             u.setAccountId(String.valueOf(user.getId()));
-            u.setGmtcreate(System.currentTimeMillis());
-            u.setGmtmodified(u.getGmtcreate());
             u.setAvatarUrl(user.getAvatar_url());
-            userMapper.insert(u);
+            userService.createorupdate(u);
+//            userMapper.insert(u);
             response.addCookie(new Cookie("token",token));
 //            request.getSession().setAttribute("user",user);
             return "redirect:/";
@@ -66,5 +66,14 @@ public class AuthorizeController {
             return "redirect:/";
         }
 //        return "index";
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpServletRequest request,HttpServletResponse response){
+        request.getSession().removeAttribute("user");
+        Cookie cookie=new Cookie("token",null);
+        cookie.setMaxAge(0);
+        response.addCookie(cookie);
+        return "redirect:/";
     }
 }

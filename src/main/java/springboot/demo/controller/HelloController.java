@@ -1,5 +1,6 @@
 package springboot.demo.controller;
 
+import com.github.pagehelper.PageInfo;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -35,7 +36,9 @@ public class HelloController {
                         @RequestParam(name = "size",defaultValue = "5")Integer size){
         User user = (User)request.getSession().getAttribute("user");
 
-      List<QuestionDTO> questionList=questionService.list(page,size,model);
+        PageInfo pageInfo=questionService.list(page,size);
+        model.addAttribute("pageInfo",pageInfo);
+      List<QuestionDTO> questionList=questionService.toQuestionDTO(pageInfo.getList());
           model.addAttribute("questions",questionList);
 //        System.out.println(model);
         return "index";

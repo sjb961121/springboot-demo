@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>首页</title>
+    <title>我的问题</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
     <script src="/js/jquery-3.5.0.min.js"></script>
@@ -42,14 +42,14 @@
                         </a>
                     </li>
                     <li th:if="${pageInfo.hasPreviousPage}">
-                        <a th:href="@{'/profile/'+${section}(page=${pageInfo.pageNum-1})}" aria-label="Previous" >
+                        <a th:href="@{'/profile/'+${section}(page=${pageInfo.pageNum}-1)}" aria-label="Previous" >
                             <span aria-hidden="true">&lt;</span>
                         </a>
                     </li>
                     <li th:each="page:${pageInfo.getNavigatepageNums()}" th:class="${page==pageInfo.getPageNum()}?'active':''">
                         <a th:href="@{'/profile/'+${section}(page=${page})}" th:text="${page}" ></a></li>
                     <li th:if="${pageInfo.hasNextPage}">
-                        <a  th:href="@{'/profile/'+${section}(page=${pageInfo.pageNum+1})}" aria-label="Next">
+                        <a  th:href="@{'/profile/'+${section}(page=${pageInfo.pageNum}+1)}" aria-label="Next">
                             <span aria-hidden="true">&gt;</span>
                         </a>
                     </li>

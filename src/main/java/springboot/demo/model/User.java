@@ -7,6 +7,7 @@ public class User {
     private String token;
     private Long gmtcreate;
     private Long gmtmodified;
+
     private String avatarUrl;
 
     public String getAvatarUrl() {

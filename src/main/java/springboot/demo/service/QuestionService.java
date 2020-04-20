@@ -22,31 +22,25 @@ public class QuestionService {
     @Autowired
     private UserMapper userMapper;
 
-    public List<QuestionDTO> list(Integer page, Integer size,Model model){
+    public PageInfo list(Integer page, Integer size){
         PageHelper.startPage(page,size);
         List<Question> questions=questionMapper.list();
-        List<QuestionDTO> questionDTOList=new ArrayList<>();
         PageInfo pageInfo = new PageInfo(questions);
-        for (Question question:questions){
-            User user=userMapper.selectById(question.getCreator());
-            QuestionDTO questionDTO=new QuestionDTO();
-            BeanUtils.copyProperties(question,questionDTO);
-            questionDTO.setUser(user);
-            questionDTOList.add(questionDTO);
-        }
-
-        model.addAttribute("pageInfo",pageInfo);
+//        model.addAttribute("pageInfo",pageInfo);
 //        System.out.println(model);
 //        System.out.println(pageInfo);
-
-        return questionDTOList;
+        return pageInfo;
 
     }
 
-    public List<QuestionDTO> listByUserId(Integer page,Integer size,Integer id,Model model){
+    public PageInfo listByUserId(Integer page,Integer size,Integer id){
         PageHelper.startPage(page,size);
         List<Question> questions=questionMapper.listByUserId(id);
         PageInfo pageInfo = new PageInfo(questions);
+        return pageInfo;
+    }
+
+    public List<QuestionDTO> toQuestionDTO(List<Question> questions){
         List<QuestionDTO> questionDTOList=new ArrayList<>();
         for (Question question:questions){
             User user=userMapper.selectById(question.getCreator());
@@ -55,7 +49,25 @@ public class QuestionService {
             questionDTO.setUser(user);
             questionDTOList.add(questionDTO);
         }
-        model.addAttribute("pageInfo",pageInfo);
         return questionDTOList;
+    }
+
+    public QuestionDTO getQuestionById(Integer id) {
+        Question question=questionMapper.getQuestionByid(id);
+        User user=userMapper.selectById(question.getCreator());
+        QuestionDTO questionDTO=new QuestionDTO();
+        BeanUtils.copyProperties(question,questionDTO);
+        questionDTO.setUser(user);
+        return questionDTO;
+    }
+
+    public void createorupdate(Question question) {
+        if (question.getId()==null){
+            questionMapper.insert(question);
+        }
+        else {
+            question.setGmtModified(question.getGmtCreate());
+            questionMapper.update(question);
+        }
     }
 }

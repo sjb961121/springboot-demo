@@ -1,5 +1,6 @@
 package springboot.demo.controller;
 
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,7 +33,9 @@ public class ProfileController {
             model.addAttribute("error","用户未登录");
             return "redirect:/";
         }
-        List<QuestionDTO> list=questionService.listByUserId(page,size,user.getId(),model);
+        PageInfo pageInfo =questionService.listByUserId(page,size,user.getId());
+        model.addAttribute("pageInfo",pageInfo);
+        List list = questionService.toQuestionDTO(pageInfo.getList());
         model.addAttribute("questions",list);
         model.addAttribute("section","question");
         model.addAttribute("sectionName","我的问题");
@@ -40,7 +43,18 @@ public class ProfileController {
     }
 
     @GetMapping("/reply")
-    public String myreply(Model model){
+    public String myreply(Model model,HttpServletRequest request,
+                          @RequestParam(value = "page",defaultValue = "1")Integer page,
+                          @RequestParam(value = "size",defaultValue = "5")Integer size){
+        User user = (User)request.getSession().getAttribute("user");
+        if (user==null){
+            model.addAttribute("error","用户未登录");
+            return "redirect:/";
+        }
+        PageInfo pageInfo =questionService.listByUserId(page,size,user.getId());
+        model.addAttribute("pageInfo",pageInfo);
+        List list = questionService.toQuestionDTO(pageInfo.getList());
+        model.addAttribute("questions",list);
         model.addAttribute("section","reply");
         model.addAttribute("sectionName","新的回复");
         return "profile";

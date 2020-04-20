@@ -4,12 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import springboot.demo.mapper.QuestionMapper;
 import springboot.demo.mapper.UserMapper;
 import springboot.demo.model.Question;
 import springboot.demo.model.User;
+import springboot.demo.service.QuestionService;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -19,6 +21,17 @@ public class PublishController {
     @Autowired
     private QuestionMapper questionMapper;
 
+    @Autowired
+    private QuestionService questionService;
+    @GetMapping("/publish/{id}")
+    public String edit(@PathVariable("id")Integer id,Model model){
+        Question question = questionMapper.getQuestionByid(id);
+        model.addAttribute("title",question.getTitle());
+        model.addAttribute("tag",question.getTag());
+        model.addAttribute("description",question.getDescription());
+        model.addAttribute("questionid",question.getId());
+        return "publish";
+    }
 
     @GetMapping("/publish")
     public String publish(){
@@ -29,6 +42,7 @@ public class PublishController {
     public String publishquestion(@RequestParam(name = "title",required = false) String title,
                                   @RequestParam(name = "tag",required = false) String tag,
                                   @RequestParam(name = "description",required = false) String description,
+                                  @RequestParam(name = "questionid",required = false) Integer id,
                                   HttpServletRequest request,
                                   Model model){
         model.addAttribute("title",title);
@@ -52,6 +66,7 @@ public class PublishController {
         question.setTitle(title);
         question.setDescription(description);
         question.setTag(tag);
+        question.setId(id);
 
         User user = (User)request.getSession().getAttribute("user");
         if (user==null){
@@ -63,7 +78,8 @@ public class PublishController {
         question.setCreator(user.getId());
         question.setGmtModified(question.getGmtCreate());
 
-        questionMapper.insert(question);
+        questionService.createorupdate(question);
+//        questionMapper.insert(question);
 
         return "redirect:/";
     }
