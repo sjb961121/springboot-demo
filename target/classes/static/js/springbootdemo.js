@@ -100,7 +100,7 @@ function subcomment(e) {
     }
     $.ajax({
         type: "POST",
-        url: "/comment/",
+        url: "/comment",
         contentType:"application/json",
         data: JSON.stringify(
             {

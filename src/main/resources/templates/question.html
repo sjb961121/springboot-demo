@@ -55,7 +55,10 @@
                         </div>
                         <div class="menus">
                             <span class="glyphicon glyphicon-thumbs-up icons"  aria-hidden="true"></span>
-                            <span class="glyphicon glyphicon-comment icons" aria-hidden="true" th:data-id="${comment.id}" th:id="${comment.id}" onclick="collapseComment(this)"></span>
+                            <span class="icons" aria-hidden="true" th:data-id="${comment.id}" th:id="${comment.id}" onclick="collapseComment(this)">
+                                <span class="glyphicon glyphicon-comment"></span>
+                            <span th:if="${comment.commentCount!=0}" th:text="${comment.commentCount}"></span>
+                            </span>
                             <span class="pull-right" th:text="${#dates.format(comment.gmtCreate,'yyyy MMMM dd')}"></span>
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 collapse" th:id="${'comment-'+comment.id}">

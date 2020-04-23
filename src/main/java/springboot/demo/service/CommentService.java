@@ -54,6 +54,7 @@ public class CommentService {
                     throw new CommentException("评论不存在",2005);
                 }
                 commentMapper.insert(comment);
+                commentMapper.updateIncCommentCountById(comment.getParentId());
             }
 
     }

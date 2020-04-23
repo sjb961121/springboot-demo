@@ -2,76 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c937c9e1-2fb3-4527-8e0b-644506a99b6f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/springboot/demo/component/MyErrorAttributes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/springboot/demo/controller/CommentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/springboot/demo/dto/CommentCreateDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/springboot/demo/dto/CommentDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/springboot/demo/dto/ResultDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/springboot/demo/enums/CommentEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/springboot/demo/exception/CommentException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/springboot/demo/mapper/CommentMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/springboot/demo/model/Comment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/springboot/demo/service/CommentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/CommentMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/moment.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/springbootdemo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/CommentMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/springboot/demo/component/MyErrorAttributes.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/springboot/demo/controller/CommentController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/springboot/demo/dto/CommentCreateDTO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/springboot/demo/dto/CommentDTO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/springboot/demo/dto/ResultDTO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/springboot/demo/enums/CommentEnum.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/springboot/demo/exception/CommentException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/springboot/demo/mapper/CommentMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/springboot/demo/model/Comment.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/springboot/demo/service/CommentService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/js/moment.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/js/springbootdemo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/MyBatisCodeHelperDatasource.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MyBatisCodeHelperDatasource.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/04d57f3a-e890-4233-9370-3954391c5bb1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/04d57f3a-e890-4233-9370-3954391c5bb1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/demo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springboot/demo/advice/ErrorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springboot/demo/advice/ErrorHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/springboot/demo/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springboot/demo/controller/CommentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/springboot/demo/controller/PublishController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springboot/demo/controller/PublishController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springboot/demo/controller/QuestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springboot/demo/controller/QuestionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springboot/demo/dto/QuestionDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springboot/demo/dto/QuestionDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springboot/demo/exception/QuestionException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springboot/demo/exception/QuestionException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springboot/demo/interceptor/SessionInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springboot/demo/interceptor/SessionInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springboot/demo/mapper/QuestionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springboot/demo/mapper/QuestionMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springboot/demo/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springboot/demo/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springboot/demo/model/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springboot/demo/model/Question.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springboot/demo/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springboot/demo/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springboot/demo/service/QuestionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springboot/demo/service/QuestionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springboot/demo/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springboot/demo/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/QuestionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/QuestionMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/springbootdemo.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/springbootdemo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/error.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error/4xx.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/error/4xx.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/springboot/demo/dto/CommentDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springboot/demo/dto/CommentDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/springboot/demo/mapper/CommentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springboot/demo/mapper/CommentMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/springboot/demo/model/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springboot/demo/model/Comment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/springboot/demo/service/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springboot/demo/service/CommentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/CommentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/CommentMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/question.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/question.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/QuestionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/QuestionMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/springboot/demo/advice/ErrorHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springboot/demo/advice/ErrorHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/springboot/demo/controller/ProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springboot/demo/controller/ProfileController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/springboot/demo/controller/PublishController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springboot/demo/controller/PublishController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/springboot/demo/controller/QuestionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springboot/demo/controller/QuestionController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/springboot/demo/dto/QuestionDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springboot/demo/dto/QuestionDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/springboot/demo/exception/QuestionException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springboot/demo/exception/QuestionException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/springboot/demo/interceptor/SessionInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springboot/demo/interceptor/SessionInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/springboot/demo/mapper/QuestionMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springboot/demo/mapper/QuestionMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/springboot/demo/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springboot/demo/mapper/UserMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/springboot/demo/model/Question.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springboot/demo/model/Question.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/springboot/demo/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springboot/demo/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/springboot/demo/service/QuestionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springboot/demo/service/QuestionService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/springboot/demo/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springboot/demo/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/springbootdemo.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/springbootdemo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/error.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/error/4xx.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/error/4xx.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/CommentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/CommentMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/springboot/demo/controller/CommentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springboot/demo/controller/CommentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/springboot/demo/dto/CommentDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springboot/demo/dto/CommentDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/springboot/demo/mapper/CommentMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springboot/demo/mapper/CommentMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/springboot/demo/model/Comment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springboot/demo/model/Comment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/springboot/demo/service/CommentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springboot/demo/service/CommentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/springbootdemo.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/springbootdemo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/question.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/question.html" afterDir="false" />
     </list>
     <list id="bfc8a915-7d81-4f71-9644-ef5996eefe32" name="Revert &quot;mybatiscodehelper question commit&quot;" comment="Revert &quot;mybatiscodehelper question commit&quot;&#10;&#10;This reverts commit a1d70651">
@@ -153,17 +100,6 @@
         <option value="git@github.com:sjb961121/springboot-demo.git" />
       </set>
     </option>
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/.idea/MyBatisCodeHelperDatasource.xml">
-      <ranges>
-        <range start1="20" end1="21" start2="20" end2="21" changelist="c937c9e1-2fb3-4527-8e0b-644506a99b6f" />
-        <range start1="29" end1="29" start2="29" end2="41" changelist="c937c9e1-2fb3-4527-8e0b-644506a99b6f" />
-        <range start1="34" end1="34" start2="46" end2="58" changelist="c937c9e1-2fb3-4527-8e0b-644506a99b6f" />
-        <range start1="36" end1="48" start2="60" end2="60" changelist="bfc8a915-7d81-4f71-9644-ef5996eefe32" />
-        <range start1="55" end1="56" start2="67" end2="68" changelist="c937c9e1-2fb3-4527-8e0b-644506a99b6f" />
-      </ranges>
-    </file>
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -274,7 +210,7 @@
       <workItem from="1587376339506" duration="5752000" />
       <workItem from="1587439473855" duration="7492000" />
       <workItem from="1587527242083" duration="14806000" />
-      <workItem from="1587608873877" duration="15707000" />
+      <workItem from="1587608873877" duration="17798000" />
     </task>
     <task id="LOCAL-00001" summary="bootstrap commit">
       <created>1586826704650</created>
@@ -339,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587385899199</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="评论功能 commit">
+      <created>1587654387199</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1587654387199</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -389,7 +332,8 @@
     <MESSAGE value="拦截器 commit" />
     <MESSAGE value="问题 （before mapperxml） commit" />
     <MESSAGE value="mybatiscodehelper question commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="mybatiscodehelper question commit" />
+    <MESSAGE value="评论功能 commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="评论功能 commit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="320" y="117" key="#Project_Structure" timestamp="1587385285541">
@@ -400,18 +344,18 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="275" y="234" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1587382893894" />
-    <state x="533" y="145" key="#com.intellij.ide.util.MemberChooser" timestamp="1587625544528">
+    <state x="533" y="145" key="#com.intellij.ide.util.MemberChooser" timestamp="1587654473039">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="533" y="145" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1587625544528" />
+    <state x="533" y="145" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1587654473039" />
     <state x="474" y="340" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1587385956435">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="474" y="340" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1440.900@0.0.1440.900" timestamp="1587385956435" />
-    <state x="457" y="244" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1587563655841">
+    <state x="457" y="244" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1587655051467">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="457" y="244" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1440.900@0.0.1440.900" timestamp="1587563655841" />
+    <state x="457" y="244" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1440.900@0.0.1440.900" timestamp="1587655051467" />
     <state x="300" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1587563347104">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -420,73 +364,73 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="205" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1587641069423" />
-    <state x="338" y="66" key="CommitChangelistDialog2" timestamp="1587385899031">
+    <state x="338" y="66" key="CommitChangelistDialog2" timestamp="1587654386880">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="338" y="66" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1587385899031" />
-    <state width="1398" height="302" key="GridCell.Tab.0.bottom" timestamp="1587647392079">
+    <state x="338" y="66" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1587654386880" />
+    <state width="1398" height="302" key="GridCell.Tab.0.bottom" timestamp="1587656518115">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="302" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1587647392079" />
+    <state width="1398" height="302" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1587656518115" />
     <state width="1398" height="302" key="GridCell.Tab.0.bottom/0.23.1440.812@0.23.1440.812" timestamp="1587480567403" />
     <state width="1398" height="302" key="GridCell.Tab.0.bottom/0.23.1440.813@0.23.1440.813" timestamp="1587624033026" />
     <state width="1398" height="302" key="GridCell.Tab.0.bottom/0.23.1440.817@0.23.1440.817" timestamp="1587626730386" />
     <state width="1398" height="302" key="GridCell.Tab.0.bottom/0.23.1440.823@0.23.1440.823" timestamp="1587560031247" />
-    <state width="1398" height="302" key="GridCell.Tab.0.center" timestamp="1587647392078">
+    <state width="1398" height="302" key="GridCell.Tab.0.center" timestamp="1587656518114">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="302" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1587647392078" />
+    <state width="1398" height="302" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1587656518114" />
     <state width="1398" height="302" key="GridCell.Tab.0.center/0.23.1440.812@0.23.1440.812" timestamp="1587480567401" />
     <state width="1398" height="302" key="GridCell.Tab.0.center/0.23.1440.813@0.23.1440.813" timestamp="1587624033025" />
     <state width="1398" height="302" key="GridCell.Tab.0.center/0.23.1440.817@0.23.1440.817" timestamp="1587626730385" />
     <state width="1398" height="302" key="GridCell.Tab.0.center/0.23.1440.823@0.23.1440.823" timestamp="1587560031246" />
-    <state width="1398" height="302" key="GridCell.Tab.0.left" timestamp="1587647392077">
+    <state width="1398" height="302" key="GridCell.Tab.0.left" timestamp="1587656518113">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="302" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1587647392077" />
+    <state width="1398" height="302" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1587656518113" />
     <state width="1398" height="302" key="GridCell.Tab.0.left/0.23.1440.812@0.23.1440.812" timestamp="1587480567401" />
     <state width="1398" height="302" key="GridCell.Tab.0.left/0.23.1440.813@0.23.1440.813" timestamp="1587624033024" />
     <state width="1398" height="302" key="GridCell.Tab.0.left/0.23.1440.817@0.23.1440.817" timestamp="1587626730384" />
     <state width="1398" height="302" key="GridCell.Tab.0.left/0.23.1440.823@0.23.1440.823" timestamp="1587560031245" />
-    <state width="1398" height="302" key="GridCell.Tab.0.right" timestamp="1587647392078">
+    <state width="1398" height="302" key="GridCell.Tab.0.right" timestamp="1587656518115">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="302" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1587647392078" />
+    <state width="1398" height="302" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1587656518115" />
     <state width="1398" height="302" key="GridCell.Tab.0.right/0.23.1440.812@0.23.1440.812" timestamp="1587480567402" />
     <state width="1398" height="302" key="GridCell.Tab.0.right/0.23.1440.813@0.23.1440.813" timestamp="1587624033025" />
     <state width="1398" height="302" key="GridCell.Tab.0.right/0.23.1440.817@0.23.1440.817" timestamp="1587626730386" />
     <state width="1398" height="302" key="GridCell.Tab.0.right/0.23.1440.823@0.23.1440.823" timestamp="1587560031247" />
-    <state width="1398" height="302" key="GridCell.Tab.1.bottom" timestamp="1587647392081">
+    <state width="1398" height="302" key="GridCell.Tab.1.bottom" timestamp="1587656518118">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="302" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1587647392081" />
+    <state width="1398" height="302" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1587656518118" />
     <state width="1398" height="302" key="GridCell.Tab.1.bottom/0.23.1440.812@0.23.1440.812" timestamp="1587480567406" />
     <state width="1398" height="302" key="GridCell.Tab.1.bottom/0.23.1440.813@0.23.1440.813" timestamp="1587624033028" />
     <state width="1398" height="303" key="GridCell.Tab.1.bottom/0.23.1440.815@0.23.1440.815" timestamp="1587300615402" />
     <state width="1398" height="302" key="GridCell.Tab.1.bottom/0.23.1440.817@0.23.1440.817" timestamp="1587626730388" />
     <state width="1398" height="302" key="GridCell.Tab.1.bottom/0.23.1440.823@0.23.1440.823" timestamp="1587560031250" />
-    <state width="1398" height="302" key="GridCell.Tab.1.center" timestamp="1587647392080">
+    <state width="1398" height="302" key="GridCell.Tab.1.center" timestamp="1587656518116">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="302" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1587647392080" />
+    <state width="1398" height="302" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1587656518116" />
     <state width="1398" height="302" key="GridCell.Tab.1.center/0.23.1440.812@0.23.1440.812" timestamp="1587480567405" />
     <state width="1398" height="302" key="GridCell.Tab.1.center/0.23.1440.813@0.23.1440.813" timestamp="1587624033027" />
     <state width="1398" height="303" key="GridCell.Tab.1.center/0.23.1440.815@0.23.1440.815" timestamp="1587300615400" />
     <state width="1398" height="302" key="GridCell.Tab.1.center/0.23.1440.817@0.23.1440.817" timestamp="1587626730387" />
     <state width="1398" height="302" key="GridCell.Tab.1.center/0.23.1440.823@0.23.1440.823" timestamp="1587560031249" />
-    <state width="1398" height="302" key="GridCell.Tab.1.left" timestamp="1587647392080">
+    <state width="1398" height="302" key="GridCell.Tab.1.left" timestamp="1587656518116">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="302" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1587647392080" />
+    <state width="1398" height="302" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1587656518116" />
     <state width="1398" height="302" key="GridCell.Tab.1.left/0.23.1440.812@0.23.1440.812" timestamp="1587480567404" />
     <state width="1398" height="302" key="GridCell.Tab.1.left/0.23.1440.813@0.23.1440.813" timestamp="1587624033026" />
     <state width="1398" height="303" key="GridCell.Tab.1.left/0.23.1440.815@0.23.1440.815" timestamp="1587300615399" />
     <state width="1398" height="302" key="GridCell.Tab.1.left/0.23.1440.817@0.23.1440.817" timestamp="1587626730386" />
     <state width="1398" height="302" key="GridCell.Tab.1.left/0.23.1440.823@0.23.1440.823" timestamp="1587560031248" />
-    <state width="1398" height="302" key="GridCell.Tab.1.right" timestamp="1587647392081">
+    <state width="1398" height="302" key="GridCell.Tab.1.right" timestamp="1587656518117">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="302" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1587647392081" />
+    <state width="1398" height="302" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1587656518117" />
     <state width="1398" height="302" key="GridCell.Tab.1.right/0.23.1440.812@0.23.1440.812" timestamp="1587480567406" />
     <state width="1398" height="302" key="GridCell.Tab.1.right/0.23.1440.813@0.23.1440.813" timestamp="1587624033027" />
     <state width="1398" height="303" key="GridCell.Tab.1.right/0.23.1440.815@0.23.1440.815" timestamp="1587300615400" />
@@ -528,18 +472,18 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="450" y="200" width="543" height="524" key="StructurePopup/0.0.1440.900@0.0.1440.900" timestamp="1587294467092" />
-    <state width="590" height="445" key="SwitcherDM" timestamp="1587654175907">
+    <state width="590" height="445" key="SwitcherDM" timestamp="1587655665237">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="590" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1587654175907" />
+    <state width="590" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1587655665237" />
     <state x="422" y="163" key="VCS.ChangeListViewerDialog" timestamp="1587385749350">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="422" y="163" key="VCS.ChangeListViewerDialog/0.0.1440.900@0.0.1440.900" timestamp="1587385749350" />
-    <state x="320" y="191" key="Vcs.Push.Dialog.v2" timestamp="1587385906315">
+    <state x="320" y="191" key="Vcs.Push.Dialog.v2" timestamp="1587654394836">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="191" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1587385906315" />
+    <state x="320" y="191" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1587654394836" />
     <state x="492" y="285" width="455" height="326" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1586857656044">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

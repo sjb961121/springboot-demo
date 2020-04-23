@@ -67,6 +67,9 @@ public class PublishController {
         question.setDescription(description);
         question.setTag(tag);
         question.setId(id);
+        question.setLikeCount(0);
+        question.setCommentCount(0);
+        question.setViewCount(0);
 
         User user = (User)request.getSession().getAttribute("user");
         if (user==null){

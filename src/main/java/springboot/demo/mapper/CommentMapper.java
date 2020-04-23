@@ -1,8 +1,6 @@
 package springboot.demo.mapper;
-import org.apache.ibatis.annotations.Param;
-import java.util.List;
 
-import springboot.demo.model.Comment;
+import org.apache.ibatis.annotations.Param;import springboot.demo.model.Comment;import java.util.List;
 
 public interface CommentMapper {
     int deleteByPrimaryKey(Long id);
@@ -17,7 +15,9 @@ public interface CommentMapper {
 
     int updateByPrimaryKey(Comment record);
 
-    List<Comment> selectAllByParentIdAndType(@Param("parentId")Long parentId,@Param("type")Integer type);
+    List<Comment> selectAllByParentIdAndType(@Param("parentId") Long parentId, @Param("type") Integer type);
+
+    int updateIncCommentCountById(@Param("id")Long id);
 
 
 }
