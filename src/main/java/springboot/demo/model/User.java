@@ -1,21 +1,28 @@
 package springboot.demo.model;
 
 public class User {
+    private Long id;
+
     private String name;
-    private String accountId;
-    private Integer id;
+
     private String token;
-    private Long gmtcreate;
-    private Long gmtmodified;
+
+    private String accountId;
+
+    private Long gmtCreate;
+
+    private Long gmtModified;
+
+    private String bio;
 
     private String avatarUrl;
 
-    public String getAvatarUrl() {
-        return avatarUrl;
+    public Long getId() {
+        return id;
     }
 
-    public void setAvatarUrl(String avatarUrl) {
-        this.avatarUrl = avatarUrl;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -26,22 +33,6 @@ public class User {
         this.name = name;
     }
 
-    public String getAccountId() {
-        return accountId;
-    }
-
-    public void setAccountId(String accountId) {
-        this.accountId = accountId;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
     public String getToken() {
         return token;
     }
@@ -50,19 +41,43 @@ public class User {
         this.token = token;
     }
 
-    public Long getGmtcreate() {
-        return gmtcreate;
+    public String getAccountId() {
+        return accountId;
     }
 
-    public void setGmtcreate(Long gmtcreate) {
-        this.gmtcreate = gmtcreate;
+    public void setAccountId(String accountId) {
+        this.accountId = accountId;
     }
 
-    public Long getGmtmodified() {
-        return gmtmodified;
+    public Long getGmtCreate() {
+        return gmtCreate;
     }
 
-    public void setGmtmodified(Long gmtmodified) {
-        this.gmtmodified = gmtmodified;
+    public void setGmtCreate(Long gmtCreate) {
+        this.gmtCreate = gmtCreate;
+    }
+
+    public Long getGmtModified() {
+        return gmtModified;
+    }
+
+    public void setGmtModified(Long gmtModified) {
+        this.gmtModified = gmtModified;
+    }
+
+    public String getBio() {
+        return bio;
+    }
+
+    public void setBio(String bio) {
+        this.bio = bio;
+    }
+
+    public String getAvatarUrl() {
+        return avatarUrl;
+    }
+
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
     }
 }

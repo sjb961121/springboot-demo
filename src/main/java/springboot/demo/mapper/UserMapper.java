@@ -1,23 +1,27 @@
 package springboot.demo.mapper;
 
-import org.apache.ibatis.annotations.*;
-import springboot.demo.model.User;
+import org.apache.ibatis.annotations.Param;import springboot.demo.model.User;import java.util.List;
 
-@Mapper
 public interface UserMapper {
-    @Insert("Insert into user (name,account_id,token,gmt_create,gmt_modified,avatar_url) values (#{name},#{accountId},#{token},#{gmtcreate},#{gmtmodified},#{avatarUrl})")
-    public void insert(User user);
+    int deleteByPrimaryKey(Long id);
 
-    @Select("select * from user where token=#{token}")
-    User selectBytoken(@Param("token") String token);
+    int insert(User record);
 
-    @Select("select * from user where id=#{id}")
-    User selectById(@Param("id") Integer id);
+    int insertSelective(User record);
 
-    @Select("select * from user where account_id=#{accountid}")
-    User findByAccountId(@Param("accountid") String accountId);
+    User selectByPrimaryKey(Long id);
 
-    @Update("update user set name=#{name},token=#{token},gmt_modified=#{gmtmodified},avatar_url=#{avatarUrl} where id=#{id}")
-    void update(User user);
+    int updateByPrimaryKeySelective(User record);
+
+    int updateByPrimaryKey(User record);
+
+    List<User> selectAllByToken(@Param("token") String token);
+
+    User selectByToken(@Param("token") String token);
+
+    User selectById(@Param("id") Long id);
+
+    User selectByAccountId(@Param("accountId") String accountId);
+
+    int updateById(@Param("updated") User updated, @Param("id") Long id);
 }
-

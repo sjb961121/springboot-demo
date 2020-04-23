@@ -34,7 +34,7 @@ public class QuestionService {
 
     }
 
-    public PageInfo listByUserId(Integer page,Integer size,Integer id){
+    public PageInfo listByUserId(Integer page,Integer size,Long id){
         PageHelper.startPage(page,size);
         List<Question> questions=questionMapper.selectAllByCreator(id);
         PageInfo pageInfo = new PageInfo(questions);
@@ -53,10 +53,10 @@ public class QuestionService {
         return questionDTOList;
     }
 
-    public QuestionDTO getQuestionById(Integer id) {
+    public QuestionDTO getQuestionById(Long id) {
         Question question=questionMapper.selectById(id);
         if (question==null){
-            throw new QuestionException();
+            throw new QuestionException("问题不存在",2002);
         }
         User user=userMapper.selectById(question.getCreator());
         QuestionDTO questionDTO=new QuestionDTO();
@@ -73,5 +73,9 @@ public class QuestionService {
             question.setGmtModified(question.getGmtCreate());
             questionMapper.updateById(question,question.getId());
         }
+    }
+
+    public void incView(Long id) {
+        questionMapper.updateIncViewCountById(id);
     }
 }

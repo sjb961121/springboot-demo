@@ -3,3 +3,21 @@
     font-weight: normal;
     color: #999;
 }
+
+.menus{
+    margin-top: 5px;
+}
+
+.icons{
+    margin-right: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.icons:hover{
+    color:#499ef3;
+}
+
+.active{
+    color:#499ef3;
+}

@@ -12,18 +12,18 @@ public class UserService {
 
 
     public void createorupdate(User u) {
-        User user=userMapper.findByAccountId(u.getAccountId());
+        User user=userMapper.selectByAccountId(u.getAccountId());
         if (user==null){
-            u.setGmtcreate(System.currentTimeMillis());
-            u.setGmtmodified(u.getGmtcreate());
+            u.setGmtCreate(System.currentTimeMillis());
+            u.setGmtModified(u.getGmtCreate());
             userMapper.insert(u);
         }
         else{
             user.setAvatarUrl(u.getAvatarUrl());
             user.setName(u.getName());
             user.setToken(u.getToken());
-            user.setGmtmodified(System.currentTimeMillis());
-            userMapper.update(user);
+            user.setGmtModified(System.currentTimeMillis());
+            userMapper.updateById(user,user.getId());
         }
     }
 
