@@ -30,6 +30,13 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" th:text="${question.description}">
             </div>
             <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <span class="label label-info" th:each="tag:${question.tag.split(',')}" style="margin-right: 10px">
+                    <span class="glyphicon glyphicon-tag"></span>
+                    <span th:text="${tag}"></span>
+                </span>
+            </div>
+            <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-bottom: 40px">
             <a th:href="@{'/publish/'+${question.id}}" th:if="${session.user!=null && session.user.id==question.creator}">
                     <span class="glyphicon  glyphicon-pencil" aria-hidden="true">
@@ -129,6 +136,11 @@
             <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >
                 <h4>相关问题</h4>
+                <ul style="list-style: none;padding-left: 0px">
+                    <li th:each="related:${relatedquestions}">
+                        <a th:href="@{'/question/'+${related.id}}" th:text="${related.title}" style="cursor: pointer;"></a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>

@@ -27,6 +27,11 @@ public interface QuestionMapper {
 
     int updateIncCommentCountById(@Param("id")Long id);
 
+    List<Question> selectByTagRegexp(@Param("tag")String tag,@Param("id")Long id);
+
+
+
+
 
 
 

@@ -2,6 +2,7 @@ package springboot.demo.service;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,7 @@ import springboot.demo.model.User;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class QuestionService {
@@ -25,6 +27,7 @@ public class QuestionService {
 
     public PageInfo list(Integer page, Integer size){
         PageHelper.startPage(page,size);
+        PageHelper.orderBy("gmt_create desc");
         List<Question> questions=questionMapper.selectAll();
         PageInfo pageInfo = new PageInfo(questions);
 //        model.addAttribute("pageInfo",pageInfo);
@@ -77,5 +80,21 @@ public class QuestionService {
 
     public void incView(Long id) {
         questionMapper.updateIncViewCountById(id);
+    }
+
+    public List<QuestionDTO> relatedQuestions(Long id) {
+        Question question = questionMapper.selectById(id);
+        String tag = question.getTag();
+        if (StringUtils.isBlank(tag)){
+            return new ArrayList<>();
+        }
+        String newtag = StringUtils.replace(tag, ",", "|");
+        List<Question> relatedquestions = questionMapper.selectByTagRegexp(newtag, id);
+        List<QuestionDTO> questionDTOList = relatedquestions.stream().map(q -> {
+            QuestionDTO questionDTO = new QuestionDTO();
+            BeanUtils.copyProperties(q, questionDTO);
+            return questionDTO;
+        }).collect(Collectors.toList());
+        return questionDTOList;
     }
 }
