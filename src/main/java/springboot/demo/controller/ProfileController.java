@@ -11,6 +11,7 @@ import springboot.demo.dto.QuestionDTO;
 import springboot.demo.mapper.UserMapper;
 import springboot.demo.model.Question;
 import springboot.demo.model.User;
+import springboot.demo.service.NotificationService;
 import springboot.demo.service.QuestionService;
 
 import javax.servlet.http.Cookie;
@@ -20,8 +21,8 @@ import java.util.List;
 @Controller
 @RequestMapping("/profile")
 public class ProfileController {
-
-
+    @Autowired
+    private NotificationService notificationService;
     @Autowired
     private QuestionService questionService;
     @GetMapping("/question")
@@ -51,10 +52,10 @@ public class ProfileController {
             model.addAttribute("error","用户未登录");
             return "redirect:/";
         }
-        PageInfo pageInfo =questionService.listByUserId(page,size,user.getId());
+        PageInfo pageInfo =notificationService.listByUserId(page,size,user.getId());
         model.addAttribute("pageInfo",pageInfo);
-        List list = questionService.toQuestionDTO(pageInfo.getList());
-        model.addAttribute("questions",list);
+        List list = notificationService.toNotificationDTO(pageInfo.getList());
+        model.addAttribute("notifications",list);
         model.addAttribute("section","reply");
         model.addAttribute("sectionName","新的回复");
         return "profile";

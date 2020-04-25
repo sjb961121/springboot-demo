@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
     <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/springbootdemo.js"></script>
 
 </head>
 <body style="background-color: #efefef">
@@ -33,7 +34,31 @@
                 </div>
                 <div class="form-group">
                     <label for="tag">添加标签</label>
-                    <input th:value="${tag}" type="text" class="form-control" id="tag" name="tag" placeholder="添加标签，以逗号分隔">
+                    <input th:value="${tag}" type="text" class="form-control" id="tag" name="tag" placeholder="添加标签，以逗号分隔" onclick="showselectTag()">
+                    <div style="display: none;margin-top: 10px" id="select_tag" >
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" th:each="tag:${tags}">
+                                <a th:href="${'#'+tag.categoryName}" role="tab" data-toggle="tab" th:text="${tag.categoryName}"></a>
+                            </li>
+<!--                            <li role="presentation"><a href="#home" role="tab" data-toggle="tab">开发语言</a></li>-->
+                        </ul>
+
+                        <!-- 面板区 -->
+                        <div class="tab-content" >
+
+                            <div role="tabpanel" th:class="${tagStat.first?'tab-pane active':'tab-pane'}"  th:each="tag:${tags}" th:id="${tag.categoryName}" style="margin-top: 5px">
+                                 <span class="label label-info" style="margin-right: 10px;cursor: pointer;white-space: normal" th:each="onetag:${tag.tags}">
+                                    <span class="glyphicon glyphicon-tag" th:onclick="selectTag([[${onetag}]])" th:text="${' '+onetag}" style="font-size: 14px"></span>
+                                </span>
+                            </div>
+<!--                            <div role="tabpanel" class="tab-pane" id="home">-->
+<!--                                <span class="label label-info" style="margin-right: 5px">-->
+<!--                                    <span class="glyphicon glyphicon-tag" onclick="selectTag('Spring')">Spring</span>-->
+<!--                                </span>-->
+<!--                            </div>-->
+                        </div>
+
+                    </div>
                 </div>
                 <span class="alert alert-danger" role="alert" th:text="${error}" th:if="${error}!=null"></span>
                 <button type="submit" class="btn btn-success" style="float: right">发布</button>

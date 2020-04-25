@@ -18,7 +18,7 @@
 <div class="container-fluid" style="background-color: white;margin: 50px">
                 <h1 style="font-size:60px">出错了!</h1>
                 <br>
-                <h2>服务器出现问题</h2>
+                <h2 th:text="${session.errormessage}?:_">服务器出现问题</h2>
                 <p><a class="btn btn-primary btn-lg" href="/" role="button">返回主页</a></p>
 </div>
 

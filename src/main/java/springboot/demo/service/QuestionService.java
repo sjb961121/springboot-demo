@@ -39,6 +39,7 @@ public class QuestionService {
 
     public PageInfo listByUserId(Integer page,Integer size,Long id){
         PageHelper.startPage(page,size);
+        PageHelper.orderBy("gmt_create desc");
         List<Question> questions=questionMapper.selectAllByCreator(id);
         PageInfo pageInfo = new PageInfo(questions);
         return pageInfo;
@@ -59,7 +60,7 @@ public class QuestionService {
     public QuestionDTO getQuestionById(Long id) {
         Question question=questionMapper.selectById(id);
         if (question==null){
-            throw new QuestionException("问题不存在",2002);
+            throw new QuestionException("你找到问题不在了，要不要换个试试？",2002);
         }
         User user=userMapper.selectById(question.getCreator());
         QuestionDTO questionDTO=new QuestionDTO();

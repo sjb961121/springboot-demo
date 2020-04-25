@@ -39,6 +39,18 @@
                 </TableGenerateConfig>
               </value>
             </entry>
+            <entry key="springbootdemo:notification">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="Notification" />
+                  <option name="moduleName" value="demo" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
             <entry key="springbootdemo:question">
               <value>
                 <TableGenerateConfig>

@@ -24,7 +24,7 @@
             <h2> <span th:text="${question.title}"></span></h2>
             <span class="texts">阅读数：[[${question.viewCount}]]
                 <span th:text="'作者：'+${question.user.name}"></span>
-                <span th:text="'发布时间：'+${#dates.format(question.gmtCreate,'yyyy MMMM dd HH:mm')}"></span>
+                <span th:text="'发布时间：'+${#dates.format(question.gmtCreate,'yyyy-MM-dd HH:mm')}"></span>
             </span>
             <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" th:text="${question.description}">
@@ -66,7 +66,7 @@
                                 <span class="glyphicon glyphicon-comment"></span>
                             <span th:if="${comment.commentCount!=0}" th:text="${comment.commentCount}"></span>
                             </span>
-                            <span class="pull-right" th:text="${#dates.format(comment.gmtCreate,'yyyy MMMM dd')}"></span>
+                            <span class="pull-right" th:text="${#dates.format(comment.gmtCreate,'yyyy-MM-dd HH:mm')}"></span>
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 collapse" th:id="${'comment-'+comment.id}">
 <!--                            二级评论-->

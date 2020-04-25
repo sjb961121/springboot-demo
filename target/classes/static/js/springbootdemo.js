@@ -130,3 +130,20 @@ function subcomment(e) {
         dataType: "json"
     });
 }
+
+function selectTag(tag) {
+    var taginput = $("#tag").val();
+    if (taginput.indexOf(tag)==-1){
+        if (taginput){
+            $("#tag").val(taginput+','+tag);
+        }
+        else {
+            $("#tag").val(tag);
+        }
+    }
+
+}
+
+function showselectTag() {
+    $("#select_tag").show();
+}

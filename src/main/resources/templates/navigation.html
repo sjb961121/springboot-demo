@@ -41,7 +41,10 @@
             </form>
             <ul class="nav navbar-nav navbar-right">
                 <li th:if="${session.user!=null}">
-                    <a href="/publish">发布问题</a>
+                    <a href="/publish">提问</a>
+                </li>
+                <li th:if="${session.user!=null}">
+                    <a href="/profile/reply">通知<span class="badge" th:text="${session.unreadCount}"></span></a>
                 </li>
                 <li th:if="${session.user==null}"><a href="https://github.com/login/oauth/authorize?client_id=f713d1e4d8e394d02c5d&http://redirect_uri=localhost:8887/callback&scope=user&state=1">登录</a></li>
                 <li class="dropdown" th:if="${session.user!=null}">

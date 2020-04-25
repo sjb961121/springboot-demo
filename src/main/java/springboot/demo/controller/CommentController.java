@@ -44,7 +44,7 @@ public class CommentController {
         comment.setLikeCount(0);
         comment.setCommentCount(0);
 
-        commentService.insert(comment);
+        commentService.insert(comment,user);
 //        commentMapper.insert(comment);
 //        HashMap<Object,Object> map=new HashMap<>();
 //        map.put("message","成功");

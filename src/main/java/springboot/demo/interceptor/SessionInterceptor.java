@@ -5,7 +5,9 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 import springboot.demo.mapper.UserMapper;
+import springboot.demo.model.Notification;
 import springboot.demo.model.User;
+import springboot.demo.service.NotificationService;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -15,6 +17,9 @@ import javax.servlet.http.HttpServletResponse;
 public class SessionInterceptor implements HandlerInterceptor {
     @Autowired
     private UserMapper userMapper;
+
+    @Autowired
+    private NotificationService notificationService;
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
@@ -26,6 +31,8 @@ public class SessionInterceptor implements HandlerInterceptor {
                     User user = userMapper.selectByToken(token);
                     if (user!=null){
                         request.getSession().setAttribute("user",user);
+                        Long unreadcount=notificationService.unreadCount(user.getId());
+                        request.getSession().setAttribute("unreadCount",unreadcount);
                     }
                     break;
                 }
