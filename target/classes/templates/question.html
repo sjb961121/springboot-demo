@@ -10,6 +10,12 @@
     <script src="/js/moment.js"></script>
     <link rel="stylesheet" href="/css/springbootdemo.css">
     <script src="/js/springbootdemo.js"></script>
+    <link rel="stylesheet" href="/css/editormd.min.css">
+    <link rel="stylesheet" href="/css/editormd.preview.min.css">
+    <script src="/js/editormd.min.js" type="application/javascript"></script>
+    <script src="/js/moment.js" type="application/javascript"></script>
+    <script src="/js/lib/marked.min.js"></script>
+    <script src="/js/lib/prettify.min.js"></script>
 
 
 </head>
@@ -27,8 +33,14 @@
                 <span th:text="'发布时间：'+${#dates.format(question.gmtCreate,'yyyy-MM-dd HH:mm')}"></span>
             </span>
             <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" th:text="${question.description}">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="question-view">
+                <textarea style="display:none;" th:text="${question.description}"></textarea>
             </div>
+            <script type="text/javascript">
+                $(function () {
+                    editormd.markdownToHTML("question-view", {});
+                });
+            </script>
             <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <span class="label label-info" th:each="tag:${question.tag.split(',')}" style="margin-right: 10px">
@@ -104,12 +116,12 @@
                 <div class="media">
                     <div class="media-left">
                         <a href="#">
-                            <img class="media-object" th:src="${question.user.avatarUrl}" style="width: 30px;height: 30px">
+                            <img class="media-object" th:src="${session.user!=null?session.user.avatarUrl:'/images/default-avatar.png'}" style="width: 30px;height: 30px">
                         </a>
                     </div>
                     <div class="media-body">
                         <h4 class="media-heading" >
-                            <a  th:text="${question.user.name}" style="font-size: 15px"></a>
+                            <a  th:text="${session.user!=null?session.user.name:'匿名用户'}" style="font-size: 15px"></a>
                         </h4>
 
                     </div>
