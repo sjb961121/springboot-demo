@@ -49,24 +49,24 @@
             <nav aria-label="Page navigation">
                 <ul class="pagination">
                     <li th:if="${!pageInfo.isFirstPage}">
-                        <a th:href="@{/(page=1)}" aria-label="Previous" >
+                        <a th:href="@{/(page=1,search=${search})}" aria-label="Previous" >
                             <span aria-hidden="true">&lt;&lt;</span>
                         </a>
                     </li>
                     <li th:if="${pageInfo.hasPreviousPage}">
-                        <a th:href="@{/(page=${pageInfo.pageNum}-1)}" aria-label="Previous" >
+                        <a th:href="@{/(page=${pageInfo.pageNum}-1,search=${search})}" aria-label="Previous" >
                             <span aria-hidden="true">&lt;</span>
                         </a>
                     </li>
                     <li th:each="page:${pageInfo.getNavigatepageNums()}" th:class="${page==pageInfo.getPageNum()}?'active':''">
-                        <a th:href="@{/(page=${page})}" th:text="${page}" ></a></li>
+                        <a th:href="@{/(page=${page},search=${search})}" th:text="${page}" ></a></li>
                     <li th:if="${pageInfo.hasNextPage}">
-                        <a  th:href="@{/(page=${pageInfo.pageNum}+1)}" aria-label="Next">
+                        <a  th:href="@{/(page=${pageInfo.pageNum}+1,search=${search})}" aria-label="Next">
                             <span aria-hidden="true">&gt;</span>
                         </a>
                     </li>
                     <li th:if="${!pageInfo.isLastPage}">
-                        <a th:href="@{/(page=${pageInfo.navigateLastPage})}" aria-label="Previous" >
+                        <a th:href="@{/(page=${pageInfo.navigateLastPage},search=${search})}" aria-label="Previous" >
                             <span aria-hidden="true">&gt;&gt;</span>
                         </a>
                     </li>
@@ -79,6 +79,8 @@
         </div>
     </div>
 </div>
+
+<footer th:replace="foot::footer"></footer>
 
 </body>
 </html>

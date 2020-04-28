@@ -25,15 +25,22 @@ public class QuestionService {
     @Autowired
     private UserMapper userMapper;
 
-    public PageInfo list(Integer page, Integer size){
+    public PageInfo list(Integer page, Integer size,String search){
         PageHelper.startPage(page,size);
         PageHelper.orderBy("gmt_create desc");
-        List<Question> questions=questionMapper.selectAll();
-        PageInfo pageInfo = new PageInfo(questions);
+        if (StringUtils.isBlank(search)) {
+            List<Question> questions = questionMapper.selectAll();
+            PageInfo pageInfo = new PageInfo(questions);
+            return pageInfo;
+        }else {
+            String title=StringUtils.replace(search," ","|");
+            List<Question> questions = questionMapper.selectAllByTitleRegexp(title);
+            PageInfo pageInfo = new PageInfo(questions);
+            return pageInfo;
+        }
 //        model.addAttribute("pageInfo",pageInfo);
 //        System.out.println(model);
 //        System.out.println(pageInfo);
-        return pageInfo;
 
     }
 

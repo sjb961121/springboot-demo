@@ -1,0 +1,5 @@
+2020-04-28 14:25:26.678 DEBUG 1597 --- [SpringContextShutdownHook] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@43195e57, started on Tue Apr 28 14:25:20 CST 2020
+2020-04-28 14:25:26.678 DEBUG 1597 --- [SpringContextShutdownHook] o.s.c.e.PropertySourcesPropertyResolver  : Found key 'spring.liveBeansView.mbeanDomain' in PropertySource 'systemProperties' with value of type String
+2020-04-28 14:25:26.679 DEBUG 1597 --- [SpringContextShutdownHook] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2020-04-28 14:25:26.680 DEBUG 1597 --- [SpringContextShutdownHook] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2020-04-28 14:25:26.680  INFO 1597 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'

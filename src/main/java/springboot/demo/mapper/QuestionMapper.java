@@ -29,6 +29,8 @@ public interface QuestionMapper {
 
     List<Question> selectByTagRegexp(@Param("tag")String tag,@Param("id")Long id);
 
+    List<Question> selectAllByTitleRegexp(@Param("title")String title);
+
 
 
 

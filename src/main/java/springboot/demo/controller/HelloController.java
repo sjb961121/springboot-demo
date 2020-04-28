@@ -33,10 +33,12 @@ public class HelloController {
     @RequestMapping("/")
     public String hello(HttpServletRequest request, Model model,
                         @RequestParam(name = "page",defaultValue = "1") Integer page,
-                        @RequestParam(name = "size",defaultValue = "5")Integer size){
+                        @RequestParam(name = "size",defaultValue = "5")Integer size,
+                        @RequestParam(name = "search",required = false) String search){
         User user = (User)request.getSession().getAttribute("user");
 
-        PageInfo pageInfo=questionService.list(page,size);
+        PageInfo pageInfo=questionService.list(page,size,search);
+        model.addAttribute("search",search);
         model.addAttribute("pageInfo",pageInfo);
       List<QuestionDTO> questionList=questionService.toQuestionDTO(pageInfo.getList());
           model.addAttribute("questions",questionList);
